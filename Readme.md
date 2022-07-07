@@ -1,7 +1,7 @@
 # Личный проект «Что посмотреть»
 
 * Студент: [Asya Nick](https://up.htmlacademy.ru/react/10/user/1458863).
-* Наставник: `Неизвестно`.
+* Наставник: [Юрий Лаврухин](https://htmlacademy.ru/profile/id2038891)
 
 ---
 
