@@ -66,7 +66,7 @@ export default function AddReview(): JSX.Element {
             </div>
           </div>
           <div className="add-review__text">
-            <textarea className="add-review__textarea" name="review-text" id="review-text" placeholder="Review text" defaultValue={""} />
+            <textarea className="add-review__textarea" name="review-text" id="review-text" placeholder="Review text" defaultValue={''} />
             <div className="add-review__submit">
               <button className="add-review__btn" type="submit">Post</button>
             </div>
@@ -74,5 +74,5 @@ export default function AddReview(): JSX.Element {
         </form>
       </div>
     </section>
-  )
-};
+  );
+}

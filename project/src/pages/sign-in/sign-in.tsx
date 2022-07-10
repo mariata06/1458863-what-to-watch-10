@@ -41,5 +41,5 @@ export default function SignIn(): JSX.Element {
         </div>
       </footer>
     </div>
-  )
-};
+  );
+}

@@ -4,5 +4,5 @@ export default function Page404(): JSX.Element {
       <p>404 - 404 Not Found</p>
       <a href="main.html">main page</a>
     </section>
-  )
-};
+  );
+}

@@ -28,5 +28,5 @@ export default function Player(): JSX.Element {
         </div>
       </div>
     </div>
-  )
+  );
 }
