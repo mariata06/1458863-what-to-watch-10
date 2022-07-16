@@ -12,6 +12,7 @@ import Film from '../../pages/film/film'
 import AddReview from '../../pages/add-review/add-review'
 import Player from '../../pages/player/player'
 import Page404 from '../../pages/page404/page404'
+import LoginRoute from '../../components/login-route/login-route'
 
 type AppProps = {
   title: string,
@@ -26,11 +27,21 @@ export default function App({ title, genre, year }: AppProps): JSX.Element {
         <Route path='/' element={<Layout />}>
           <Route index element={<MainScreen title={ title } genre={ genre } year={ year } />} />
           <Route path='login' element={<SignIn />} />
-          <Route path='mylist' element={<MyList />} />
+          <Route path='mylist' element={
+              <LoginRoute>
+                <MyList />
+              </LoginRoute>
+            }
+          />
           <Route path='films/'>
             <Route index element={<Film />} />
             <Route path=':id/' element={<Film />} />
-            <Route path=':id/review' element={<AddReview />} />
+            <Route path=':id/review' element={
+              <LoginRoute>
+                <AddReview />
+                </LoginRoute>
+              }
+            />
           </Route>
           <Route path='player/:id' element={<Player />} />
         </Route>
