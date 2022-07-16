@@ -6,13 +6,13 @@ import {
 
 import Layout from '../../components/layout/layout';
 import MainScreen from '../../pages/main-screen/main-screen';
-import SignIn from '../../pages/sign-in/sign-in'
-import MyList from '../../pages/my-list/my-list'
-import Film from '../../pages/film/film'
-import AddReview from '../../pages/add-review/add-review'
-import Player from '../../pages/player/player'
-import Page404 from '../../pages/page404/page404'
-import LoginRoute from '../../components/login-route/login-route'
+import SignIn from '../../pages/sign-in/sign-in';
+import MyList from '../../pages/my-list/my-list';
+import Film from '../../pages/film/film';
+import AddReview from '../../pages/add-review/add-review';
+import Player from '../../pages/player/player';
+import Page404 from '../../pages/page404/page404';
+import LoginRoute from '../../components/login-route/login-route';
 
 type AppProps = {
   title: string,
@@ -28,10 +28,10 @@ export default function App({ title, genre, year }: AppProps): JSX.Element {
           <Route index element={<MainScreen title={ title } genre={ genre } year={ year } />} />
           <Route path='login' element={<SignIn />} />
           <Route path='mylist' element={
-              <LoginRoute>
-                <MyList />
-              </LoginRoute>
-            }
+            <LoginRoute>
+              <MyList />
+            </LoginRoute>
+          }
           />
           <Route path='films/'>
             <Route index element={<Film />} />
@@ -39,8 +39,8 @@ export default function App({ title, genre, year }: AppProps): JSX.Element {
             <Route path=':id/review' element={
               <LoginRoute>
                 <AddReview />
-                </LoginRoute>
-              }
+              </LoginRoute>
+            }
             />
           </Route>
           <Route path='player/:id' element={<Player />} />
