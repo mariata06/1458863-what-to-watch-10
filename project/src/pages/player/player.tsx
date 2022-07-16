@@ -1,4 +1,8 @@
+import { useParams } from 'react-router-dom';
+
 export default function Player(): JSX.Element {
+  let { id } = useParams();
+
   return (
     <div className="player">
       <video src="#" className="player__video" poster="img/player-poster.jpg" />
