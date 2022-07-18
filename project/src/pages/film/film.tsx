@@ -1,4 +1,8 @@
+// import { useParams } from 'react-router-dom';
+
 export default function Film(): JSX.Element {
+  // let { id } = useParams();
+
   return (
     <div>
       <section className="film-card film-card--full">
