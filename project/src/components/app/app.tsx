@@ -13,19 +13,14 @@ import AddReview from '../../pages/add-review/add-review';
 import Player from '../../pages/player/player';
 import Page404 from '../../pages/page404/page404';
 import LoginRoute from '../../components/login-route/login-route';
+import { AppProps} from '../../types/types'
 
-type AppProps = {
-  title: string,
-  genre: string,
-  year: number
-}
-
-export default function App({ title, genre, year }: AppProps): JSX.Element {
+export default function App({ mainFilm, films }: AppProps): JSX.Element {
   return (
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<Layout />}>
-          <Route index element={<MainScreen title={ title } genre={ genre } year={ year } />} />
+          <Route index element={<MainScreen films={films} mainFilm={mainFilm} />} />
           <Route path='login' element={<SignIn />} />
           <Route path='mylist' element={
             <LoginRoute>

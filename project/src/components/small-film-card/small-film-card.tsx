@@ -1,22 +1,19 @@
-type SmallCardProps = {
-  title: string,
-  imgUrl: string
-}
+import { FilmProps } from '../../types/types'
 
-export default function SmallFilmCard(props: SmallCardProps): JSX.Element {
+export default function SmallFilmCard({ title, imgUrl, id} : FilmProps): JSX.Element {
   return (
-    <article className="small-film-card catalog__films-card">
+    <article className="small-film-card catalog__films-card" key={ id }>
       <div className="small-film-card__image">
         <img
-          src={ props.imgUrl }
-          alt= { props.title }
+          src={ imgUrl }
+          alt= { title }
           width="280"
           height="175"
         />
       </div>
       <h3 className="small-film-card__title">
         <a className="small-film-card__link" href="film-page.html">
-          { props.title }
+          { title }
         </a>
       </h3>
     </article>
