@@ -13,7 +13,7 @@ import AddReview from '../../pages/add-review/add-review';
 import Player from '../../pages/player/player';
 import Page404 from '../../pages/page404/page404';
 import LoginRoute from '../../components/login-route/login-route';
-import { AppProps} from '../../types/types'
+import { AppProps } from '../../types/types'
 
 export default function App({ mainFilm, films }: AppProps): JSX.Element {
   return (

@@ -13,12 +13,9 @@ export type FilmProps = {
   genre: string,
   year: number,
   imgUrl: string,
-  videoUrl?: string
+  videoUrl?: string,
 }
 
-export type FilmListProps =  {
-  films: FilmProps[]
-}
 
 
 
