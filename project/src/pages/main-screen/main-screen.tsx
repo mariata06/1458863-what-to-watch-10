@@ -1,5 +1,5 @@
-import FilmsList from '../../components/films-list/films-list'
-import { FilmProps } from '../../types/types'
+import FilmsList from '../../components/films-list/films-list';
+import { FilmProps } from '../../types/types';
 // import { Link } from 'react-router-dom'
 
 type AppProps = {

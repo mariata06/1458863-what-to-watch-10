@@ -13,7 +13,7 @@ import AddReview from '../../pages/add-review/add-review';
 import Player from '../../pages/player/player';
 import Page404 from '../../pages/page404/page404';
 import LoginRoute from '../../components/login-route/login-route';
-import { FilmProps } from '../../types/types'
+import { FilmProps } from '../../types/types';
 
 type AppProps = {
   mainFilm: FilmProps,

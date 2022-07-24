@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { useState } from 'react';
 
 export default function AddReviewForm() :JSX.Element {
-  const [ data, setData ] = useState<string>('')
+  const [ data, setData ] = useState<string>('');
   return (
     <div className="add-review">
       <form action="#" className="add-review__form">
@@ -46,6 +46,6 @@ export default function AddReviewForm() :JSX.Element {
         </div>
       </form>
     </div>
-  )
+  );
 }
 

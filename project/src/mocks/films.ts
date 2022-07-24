@@ -1,4 +1,4 @@
-import { FilmProps } from '../types/types'
+import { FilmProps } from '../types/types';
 
 export const films: FilmProps[] = [
   { id: 1, title: 'Fantastic Beasts: The Crimes of Grindelwald', genre: 'drama', year: 2014, imgUrl: 'img/fantastic-beasts-the-crimes-of-grindelwald.jpg' },

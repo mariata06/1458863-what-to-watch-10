@@ -1,14 +1,13 @@
-import FilmsList from '../../components/films-list/films-list'
-import { FilmProps } from '../../types/types'
+import FilmsList from '../../components/films-list/films-list';
+import { FilmProps } from '../../types/types';
 
-type FilmListProps =  {
+type FilmListProps = {
   films: FilmProps[]
 }
 
 export default function MyList({films}:FilmListProps): JSX.Element {
   const myFilms = films.slice(0, 10);
   const counter = myFilms.length;
-  console.log(myFilms)
 
   return (
     <div className="user-page">

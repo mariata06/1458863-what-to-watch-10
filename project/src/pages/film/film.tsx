@@ -1,5 +1,5 @@
 import { useParams, Navigate, Link } from 'react-router-dom';
-import { FilmProps } from "../../types/types";
+import { FilmProps } from '../../types/types';
 
 type Props = {
   films: FilmProps[]
@@ -8,7 +8,6 @@ type Props = {
 export default function Film({films}: Props): JSX.Element {
   const {id} = useParams();
   const film = films.find((el) => el.id === Number(id));
-  console.log(film)
 
   if (!film) {
     return <Navigate to="/" />;
