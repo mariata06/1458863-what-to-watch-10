@@ -13,7 +13,12 @@ import AddReview from '../../pages/add-review/add-review';
 import Player from '../../pages/player/player';
 import Page404 from '../../pages/page404/page404';
 import LoginRoute from '../../components/login-route/login-route';
-import { AppProps } from '../../types/types'
+import { FilmProps } from '../../types/types'
+
+type AppProps = {
+  mainFilm: FilmProps,
+  films: FilmProps[]
+}
 
 export default function App({ mainFilm, films }: AppProps): JSX.Element {
   return (
@@ -24,16 +29,16 @@ export default function App({ mainFilm, films }: AppProps): JSX.Element {
           <Route path='login' element={<SignIn />} />
           <Route path='mylist' element={
             <LoginRoute>
-              <MyList />
+              <MyList films={films} />
             </LoginRoute>
           }
           />
           <Route path='films/'>
-            <Route index element={<Film />} />
-            <Route path=':id/' element={<Film />} />
+            <Route index element={<Film films={films}/>} />
+            <Route path=':id/' element={<Film films={films}/>} />
             <Route path=':id/review' element={
               <LoginRoute>
-                <AddReview />
+                <AddReview films={films}/>
               </LoginRoute>
             }
             />

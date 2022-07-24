@@ -5,7 +5,7 @@ type LoginRouteProps = {
 };
 
 export default function LoginRoute({ children }: LoginRouteProps): JSX.Element {
-  const hasAccess = false;
+  const hasAccess = true;
 
   return hasAccess ? children : <Navigate to={'/login'} />;
 }

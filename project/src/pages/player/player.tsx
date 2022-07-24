@@ -1,6 +1,8 @@
 // import { useParams } from 'react-router-dom';
+// import { FilmProps } from '../../types/types'
 
 export default function Player(): JSX.Element {
+  // const { videoUrl } = film
   // let { id } = useParams();
 
   return (

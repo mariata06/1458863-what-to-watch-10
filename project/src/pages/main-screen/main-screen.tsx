@@ -1,15 +1,20 @@
-import { AppProps } from '../../types/types'
 import FilmsList from '../../components/films-list/films-list'
+import { FilmProps } from '../../types/types'
+// import { Link } from 'react-router-dom'
+
+type AppProps = {
+  mainFilm: FilmProps,
+  films: FilmProps[]
+}
 
 export default function MainScreen({ mainFilm, films }: AppProps): JSX.Element {
-
   return (
     <>
       <section className="film-card">
         <div className="film-card__bg">
           <img
-            src="img/bg-the-grand-budapest-hotel.jpg"
-            alt="The Grand Budapest Hotel"
+            src={ mainFilm.imgUrl }
+            alt={`${mainFilm.title} cover`}
           />
         </div>
         <h1 className="visually-hidden">WTW</h1>
@@ -60,6 +65,7 @@ export default function MainScreen({ mainFilm, films }: AppProps): JSX.Element {
                   </svg>
                   <span>Play</span>
                 </button>
+
                 <button className="btn btn--list film-card__button" type="button">
                   <svg viewBox="0 0 19 20" width="19" height="20">
                     <use xlinkHref="#add" />
@@ -67,6 +73,7 @@ export default function MainScreen({ mainFilm, films }: AppProps): JSX.Element {
                   <span>My list</span>
                   <span className="film-card__count">9</span>
                 </button>
+
               </div>
             </div>
           </div>
