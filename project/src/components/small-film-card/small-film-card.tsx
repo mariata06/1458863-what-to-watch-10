@@ -2,21 +2,21 @@ import { FilmProps } from '../../types/types';
 import { Link } from 'react-router-dom';
 
 type CardProps = {
-  film: FilmProps;
-  handleMouseOver: (id: number) => void;
-  handleMouseLeave: () => void;
+  film: FilmProps,
+  currentCard: number | null,
+  onMouseOver: (id: number) => void;
+  onMouseLeave: () => void
 };
 
-export default function SmallFilmCard(props: CardProps): JSX.Element {
-  const { film, handleMouseOver, handleMouseLeave } = props;
+export default function SmallFilmCard({film, currentCard, onMouseOver, onMouseLeave}: CardProps): JSX.Element {
   const { title, imgUrl, id } = film;
 
   return (
     <article
       className="small-film-card catalog__films-card"
       id={`card-${id}`}
-      onMouseOver={() => handleMouseOver(id)}
-      onMouseLeave={handleMouseLeave}
+      onMouseOver={() => onMouseOver(id)}
+      onMouseLeave={onMouseLeave}
     >
       <div className="small-film-card__image">
         <img src={imgUrl} alt={title} width="280" height="175" />

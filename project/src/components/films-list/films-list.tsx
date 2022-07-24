@@ -8,13 +8,16 @@ type FilmListProps = {
 
 
 export default function FilmsList({ films } :FilmListProps) :JSX.Element {
-  const [ , setCurrentCard ] = useState<number | string>('');
+  const [currentCard , setCurrentCard ] = useState<number | null>(null);
 
-  const handleMouseOver = (id: number): void =>
+  // eslint-disable-next-line
+  console.log(currentCard);
+
+  const setCurrent = (id: number): void =>
     setCurrentCard(id);
 
-  const handleMouseLeave = (): void =>
-    setCurrentCard('');
+  const disableCurrent = (): void =>
+    setCurrentCard(null);
 
   return (
     <div className="catalog__films-list">
@@ -24,8 +27,9 @@ export default function FilmsList({ films } :FilmListProps) :JSX.Element {
             <SmallFilmCard
               key={el.id}
               film={el}
-              handleMouseOver={handleMouseOver}
-              handleMouseLeave={handleMouseLeave}
+              currentCard={currentCard}
+              onMouseOver={setCurrent}
+              onMouseLeave={disableCurrent}
             />
           )
         )
