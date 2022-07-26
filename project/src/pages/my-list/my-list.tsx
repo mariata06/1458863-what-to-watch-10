@@ -1,5 +1,5 @@
 import FilmsList from '../../components/films-list/films-list';
-import Link from '../../components/logo/logo'
+import Link from '../../components/logo/logo';
 import { FilmProps } from '../../types/types';
 
 type FilmListProps = {

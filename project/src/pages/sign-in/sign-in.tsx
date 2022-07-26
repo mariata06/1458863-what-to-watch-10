@@ -1,4 +1,4 @@
-import Link from '../../components/logo/logo'
+import Link from '../../components/logo/logo';
 
 export default function SignIn(): JSX.Element {
   return (

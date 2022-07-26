@@ -1,7 +1,7 @@
 import { useParams, Navigate } from 'react-router-dom';
 import { FilmProps } from '../../types/types';
 import AddReviewForm from '../../components/add-review-form/add-review-form';
-import Link from '../../components/logo/logo'
+import Link from '../../components/logo/logo';
 
 type AddReviewProps = {
   films: FilmProps[]
