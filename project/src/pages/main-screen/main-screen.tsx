@@ -1,6 +1,6 @@
 import FilmsList from '../../components/films-list/films-list';
+import Link from '../../components/logo/logo'
 import { FilmProps } from '../../types/types';
-// import { Link } from 'react-router-dom'
 
 type AppProps = {
   mainFilm: FilmProps,
@@ -19,13 +19,7 @@ export default function MainScreen({ mainFilm, films }: AppProps): JSX.Element {
         </div>
         <h1 className="visually-hidden">WTW</h1>
         <header className="page-header film-card__head">
-          <div className="logo">
-            <a className="logo__link">
-              <span className="logo__letter logo__letter--1">W</span>
-              <span className="logo__letter logo__letter--2">T</span>
-              <span className="logo__letter logo__letter--3">W</span>
-            </a>
-          </div>
+          <Link />
           <ul className="user-block">
             <li className="user-block__item">
               <div className="user-block__avatar">
