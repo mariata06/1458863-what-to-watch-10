@@ -1,7 +1,7 @@
 import { useParams, Navigate } from 'react-router-dom';
 import { FilmProps } from '../../types/types';
 import AddReviewForm from '../../components/add-review-form/add-review-form';
-import Link from '../../components/logo/logo';
+import Logo from '../../components/logo/logo';
 
 type AddReviewProps = {
   films: FilmProps[]
@@ -24,7 +24,7 @@ export default function AddReview({films} :AddReviewProps): JSX.Element {
         </div>
         <h1 className="visually-hidden">WTW</h1>
         <header className="page-header">
-          <Link />
+          <Logo />
           <nav className="breadcrumbs">
             <ul className="breadcrumbs__list">
               <li className="breadcrumbs__item">
