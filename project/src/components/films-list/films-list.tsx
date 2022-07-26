@@ -10,9 +10,6 @@ type FilmListProps = {
 export default function FilmsList({ films } :FilmListProps) :JSX.Element {
   const [currentCard , setCurrentCard ] = useState<number | null>(null);
 
-  // eslint-disable-next-line
-  console.log(currentCard);
-
   const setCurrent = (id: number): void =>
     setCurrentCard(id);
 

@@ -1,13 +1,22 @@
-// import { useParams } from 'react-router-dom';
-// import { FilmProps } from '../../types/types'
+import { useParams, Navigate } from 'react-router-dom';
+import { FilmProps } from '../../types/types'
 
-export default function Player(): JSX.Element {
-  // const { videoUrl } = film
-  // let { id } = useParams();
+type PlayerProps = {
+  films: FilmProps[]
+}
+
+
+export default function Player( { films } :PlayerProps): JSX.Element {
+  const { id } = useParams();
+  const film = films.find((el) => el.id === Number(id));
+
+  if (!film) {
+    return <Navigate to="*" />;
+  }
 
   return (
     <div className="player">
-      <video src="#" className="player__video" poster="img/player-poster.jpg" />
+      <video src="#" className="player__video" poster={ film.imgUrl } />
       <button type="button" className="player__exit">Exit</button>
       <div className="player__controls">
         <div className="player__controls-row">

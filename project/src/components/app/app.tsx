@@ -43,7 +43,7 @@ export default function App({ mainFilm, films }: AppProps): JSX.Element {
             }
             />
           </Route>
-          <Route path='player/:id' element={<Player />} />
+          <Route path='player/:id' element={<Player films={films}/>} />
         </Route>
         <Route path="*" element={<Page404 />} />
       </Routes>

@@ -5,12 +5,12 @@ type Props = {
   films: FilmProps[]
 }
 
-export default function Film({films}: Props): JSX.Element {
-  const {id} = useParams();
+export default function Film({ films }: Props): JSX.Element {
+  const { id } = useParams();
   const film = films.find((el) => el.id === Number(id));
 
   if (!film) {
-    return <Navigate to="/" />;
+    return <Navigate to="*" />;
   }
 
   return (
@@ -42,10 +42,10 @@ export default function Film({films}: Props): JSX.Element {
           </header>
           <div className="film-card__wrap">
             <div className="film-card__desc">
-              <h2 className="film-card__title">{film.title}</h2>
+              <h2 className="film-card__title">{ film.title }</h2>
               <p className="film-card__meta">
-                <span className="film-card__genre">{film.genre}</span>
-                <span className="film-card__year">{film.year}</span>
+                <span className="film-card__genre">{ film.genre }</span>
+                <span className="film-card__year">{ film.year }</span>
               </p>
               <div className="film-card__buttons">
                 <button className="btn btn--play film-card__button" type="button">

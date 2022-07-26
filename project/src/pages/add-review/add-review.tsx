@@ -13,7 +13,7 @@ export default function AddReview({films} :AddReviewProps): JSX.Element {
   const film = films.find((el) => el.id === Number(id));
 
   if (!film) {
-    return <Navigate to="/" />;
+    return <Navigate to="*" />;
   }
 
   return (
