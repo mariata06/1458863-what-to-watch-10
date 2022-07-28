@@ -6,3 +6,7 @@ export type FilmProps = {
   imgUrl: string;
   videoUrl?: string;
 };
+
+export type LogoProps = {
+  className?: string
+}
