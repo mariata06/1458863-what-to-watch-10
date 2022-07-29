@@ -1,7 +1,8 @@
-import { useParams, Navigate, Link } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { FilmProps } from '../../types/types';
 import PageFooter from '../../components/page-footer/page-footer';
 import Logo from '../../components/logo/logo';
+import Page404 from '../page404/page404';
 
 type Props = {
   films: FilmProps[]
@@ -12,7 +13,7 @@ export default function Film({ films }: Props): JSX.Element {
   const film = films.find((el) => el.id === Number(id));
 
   if (!film) {
-    return <Navigate to="*" />;
+    return <Page404 />;
   }
 
   return (

@@ -1,7 +1,8 @@
-import { useParams, Navigate } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { FilmProps } from '../../types/types';
 import AddReviewForm from '../../components/add-review-form/add-review-form';
 import Logo from '../../components/logo/logo';
+import Page404 from '../page404/page404';
 
 type AddReviewProps = {
   films: FilmProps[]
@@ -13,7 +14,7 @@ export default function AddReview({films} :AddReviewProps): JSX.Element {
   const film = films.find((el) => el.id === Number(id));
 
   if (!film) {
-    return <Navigate to="*" />;
+    return <Page404 />;
   }
 
   return (
@@ -50,6 +51,7 @@ export default function AddReview({films} :AddReviewProps): JSX.Element {
           <img src="img/the-grand-budapest-hotel-poster.jpg" alt="The Grand Budapest Hotel poster" width={218} height={327} />
         </div>
       </div>
+
       <AddReviewForm />
 
     </section>
