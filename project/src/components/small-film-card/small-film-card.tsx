@@ -1,26 +1,41 @@
 import { FilmProps } from '../../types/types';
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
+import Video from '../../components/video/video';
 
 type CardProps = {
-  film: FilmProps,
-  currentCard: number | null,
-  onMouseOver: (id: number) => void;
-  onMouseLeave: () => void
+  film: FilmProps
 };
 
-export default function SmallFilmCard({film, currentCard, onMouseOver, onMouseLeave}: CardProps): JSX.Element {
-  const { title, imgUrl, id } = film;
+
+export default function SmallFilmCard({film}: CardProps): JSX.Element {
+  const {id, title} = film;
+  const [isActive, setActive] = useState(false);
+  let timer: NodeJS.Timeout | null = null;
+  const TIME = 1000;
+
+  const onMouseOver = () => {
+    timer = setTimeout(() => {
+      setActive(true);
+    }, TIME);
+  };
+
+  const onMouseLeave = () => {
+    if(timer) {
+      clearTimeout(timer);
+      timer = null;
+    }
+
+    setActive(false);
+  };
 
   return (
     <article
       className="small-film-card catalog__films-card"
-      id={`card-${id}`}
-      onMouseOver={() => onMouseOver(id)}
+      onMouseOver={onMouseOver}
       onMouseLeave={onMouseLeave}
     >
-      <div className="small-film-card__image">
-        <img src={imgUrl} alt={title} width="280" height="175" />
-      </div>
+      <Video film={film} isActive={isActive} />
       <h3 className="small-film-card__title">
         <Link className="small-film-card__link" to={`/films/${id}`}>
           {title}

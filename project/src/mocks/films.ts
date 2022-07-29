@@ -1,9 +1,9 @@
 import { FilmProps } from '../types/types';
 
 export const films: FilmProps[] = [
-  { id: 1, title: 'Fantastic Beasts: The Crimes of Grindelwald', genre: 'drama', year: 2014, imgUrl: 'img/fantastic-beasts-the-crimes-of-grindelwald.jpg' },
-  { id: 2, title: 'Bohemian Rhapsody', genre: 'drama', year: 2014, imgUrl: 'img/bohemian-rhapsody.jpg' },
-  { id: 3, title: 'Macbeth', genre: 'drama', year: 2014, imgUrl: 'img/macbeth.jpg' },
+  { id: 1, title: 'Fantastic Beasts: The Crimes of Grindelwald', genre: 'drama', year: 2014, imgUrl: 'img/fantastic-beasts-the-crimes-of-grindelwald.jpg', videoUrl: 'https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4' },
+  { id: 2, title: 'Bohemian Rhapsody', genre: 'drama', year: 2014, imgUrl: 'img/bohemian-rhapsody.jpg', videoUrl: 'https://upload.wikimedia.org/wikipedia/commons/transcoded/b/b3/Big_Buck_Bunny_Trailer_400p.ogv/Big_Buck_Bunny_Trailer_400p.ogv.360p.webm' },
+  { id: 3, title: 'Macbeth', genre: 'drama', year: 2014, imgUrl: 'img/macbeth.jpg'},
   { id: 4, title: 'Aviator', genre: 'drama', year: 2014, imgUrl: 'img/aviator.jpg' },
   { id: 5, title: 'We need to talk about Kevin', genre: 'drama', year: 2014, imgUrl: 'img/we-need-to-talk-about-kevin.jpg' },
   { id: 6, title: 'What We Do in the Shadows', genre: 'drama', year: 2014, imgUrl: 'img/what-we-do-in-the-shadows.jpg' },
