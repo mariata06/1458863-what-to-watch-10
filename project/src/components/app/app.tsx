@@ -13,37 +13,37 @@ import AddReview from '../../pages/add-review/add-review';
 import Player from '../../pages/player/player';
 import Page404 from '../../pages/page404/page404';
 import LoginRoute from '../../components/login-route/login-route';
+import { FilmProps } from '../../types/types';
 
 type AppProps = {
-  title: string,
-  genre: string,
-  year: number
+  mainFilm: FilmProps,
+  films: FilmProps[]
 }
 
-export default function App({ title, genre, year }: AppProps): JSX.Element {
+export default function App({ mainFilm, films }: AppProps): JSX.Element {
   return (
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<Layout />}>
-          <Route index element={<MainScreen title={ title } genre={ genre } year={ year } />} />
+          <Route index element={<MainScreen films={films} mainFilm={mainFilm} />} />
           <Route path='login' element={<SignIn />} />
           <Route path='mylist' element={
             <LoginRoute>
-              <MyList />
+              <MyList films={films} />
             </LoginRoute>
           }
           />
           <Route path='films/'>
-            <Route index element={<Film />} />
-            <Route path=':id/' element={<Film />} />
+            <Route index element={<Film films={films}/>} />
+            <Route path=':id/' element={<Film films={films}/>} />
             <Route path=':id/review' element={
               <LoginRoute>
-                <AddReview />
+                <AddReview films={films}/>
               </LoginRoute>
             }
             />
           </Route>
-          <Route path='player/:id' element={<Player />} />
+          <Route path='player/:id' element={<Player films={films}/>} />
         </Route>
         <Route path="*" element={<Page404 />} />
       </Routes>
