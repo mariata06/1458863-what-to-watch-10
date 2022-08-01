@@ -18,18 +18,16 @@ export default function Video({film, isActive}: videoProps): JSX.Element {
         videoElement.load();
       }
     }
-  }, [isActive, film.imgUrl]);
+  }, [isActive, film.imgUrl, videoElement]);
 
   return (
-    <div className="small-film-card__image">
-      <video
-        src={film.videoUrl}
-        poster={film.imgUrl}
-        loop
-        muted
-        ref={ref}
-        style={{ width: '100%' }}
-      />
-    </div>
+    <video
+      src={film.videoUrl}
+      poster={film.imgUrl}
+      loop
+      muted
+      ref={ref}
+      style={{ width: '100%' }}
+    />
   );
 }
