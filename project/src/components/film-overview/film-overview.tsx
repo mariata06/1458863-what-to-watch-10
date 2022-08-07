@@ -5,7 +5,7 @@ type filmOverviewProps = {
   film: FilmProps
 };
 
-export function filmOverview({film}: filmOverviewProps) :JSX.Element {
+export function FilmOverview({film}: filmOverviewProps) :JSX.Element {
   const { score, ratingCount, desc, director, starring } = film;
 
   return (

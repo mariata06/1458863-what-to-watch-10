@@ -22,3 +22,5 @@ export const films: FilmProps[] = [
   { id: 19, title: 'Mindhunter', genre: 'drama', year: 2014, imgUrl: 'img/mindhunter.jpg' },
   { id: 20, title: 'Midnight Special', genre: 'drama', year: 2014, imgUrl: 'img/midnight-special.jpg' }
 ];
+
+export const film: FilmProps = films[0]

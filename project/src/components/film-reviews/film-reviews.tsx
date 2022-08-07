@@ -20,7 +20,7 @@ export function FilmReviews(props :FilmReviewsProps) :JSX.Element {
   const firstCommentsArray = arr.splice(0, count);
   const secondCommentsArray = arr.splice(count);
 
-  if (props.reviews.length === 1) {
+  if (arr.length === 1) {
     return (
       <div className="film-card__reviews film-card__row">
         <div className="film-card__reviews-col">

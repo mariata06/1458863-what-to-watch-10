@@ -5,7 +5,7 @@ type filmDetailsProps = {
   film: FilmProps
 };
 
-export function filmDetails({film}: filmDetailsProps) :JSX.Element {
+export function FilmDetails({film}: filmDetailsProps) :JSX.Element {
   const { director, starring, time, genre, year } = film;
 
   return (
@@ -35,8 +35,5 @@ export function filmDetails({film}: filmDetailsProps) :JSX.Element {
         </p>
       </div>
     </div>
-
   )
 }
-
-

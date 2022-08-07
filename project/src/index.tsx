@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './components/app/app';
-import { films } from './mocks/films';
+import { films, film } from './mocks/films';
+import { reviews } from './mocks/reviews';
 
 const CurrentMovie = {
   id: 21,
@@ -17,6 +18,11 @@ const root = ReactDOM.createRoot(
 
 root.render(
   <React.StrictMode>
-    <App mainFilm={CurrentMovie} films={films} />
+    <App
+      mainFilm={film}
+      films={films}
+      film={film}
+      reviews={reviews}
+    />
   </React.StrictMode>,
 );
