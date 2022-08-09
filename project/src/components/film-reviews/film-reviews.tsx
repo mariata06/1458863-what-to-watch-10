@@ -8,8 +8,8 @@ type FilmReviewsProps = {
 export function FilmReviews(props :FilmReviewsProps) :JSX.Element {
   const arr = props.reviews;
   const count = Number(arr.length / 2);
-  const firstCommentsArray = arr.splice(0, count);
-  const secondCommentsArray = arr.splice(count);
+  const firstCommentsArray = arr.slice(0, count);
+  const secondCommentsArray = arr.slice(count);
 
   if (arr.length === 1) {
     return (
@@ -27,20 +27,14 @@ export function FilmReviews(props :FilmReviewsProps) :JSX.Element {
         <div className="film-card__reviews-col">
           {
             firstCommentsArray.map((el) =>
-              (
-                <Review key={el.id} review={el} />
-              )
+              <Review key={el.id} review={el} />
             )
           }
         </div>
-      </div>
-      <div className="film-card__reviews film-card__row">
         <div className="film-card__reviews-col">
           {
             secondCommentsArray.map((el) =>
-              (
-                <Review key={el.id} review={el} />
-              )
+              <Review key={el.id} review={el} />
             )
           }
         </div>
