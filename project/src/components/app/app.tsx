@@ -16,7 +16,7 @@ import LoginRoute from '../../components/login-route/login-route';
 import { FilmProps, ReviewProps } from '../../types/types';
 import { FilmDetails } from '../film-details/film-details';
 import { FilmReviews } from '../../components/film-reviews/film-reviews';
-import { FilmOverview } from '../../components/film-overview/film-overview'
+import { FilmOverview } from '../../components/film-overview/film-overview';
 
 type AppProps = {
   mainFilm: FilmProps,
@@ -38,17 +38,17 @@ export default function App({ mainFilm, films, film, reviews }: AppProps): JSX.E
             </LoginRoute>
           }
           />
-            <Route path='films/:id' element={<Film films={films}/>}>
-              <Route index element={<FilmOverview film={film}/>} />
-              <Route path='details' element={<FilmDetails films={films}/>} />
-              <Route path='reviews' element={<FilmReviews reviews={reviews}/>} />
-            </Route>
-            <Route path=':id/review' element={
-              <LoginRoute>
-                <AddReview films={films}/>
-              </LoginRoute>
-            }
-            />
+          <Route path='films/:id' element={<Film films={films}/>}>
+            <Route index element={<FilmOverview film={film}/>} />
+            <Route path='details' element={<FilmDetails films={films}/>} />
+            <Route path='reviews' element={<FilmReviews reviews={reviews}/>} />
+          </Route>
+          <Route path=':id/review' element={
+            <LoginRoute>
+              <AddReview films={films}/>
+            </LoginRoute>
+          }
+          />
           <Route path='player/:id' element={<Player films={films}/>} />
         </Route>
         <Route path="*" element={<Page404 />} />

@@ -18,5 +18,5 @@ export function Review({ review }: reviewProps): JSX.Element {
       </blockquote>
       <div className="review__rating">{ rating }</div>
     </div>
-  )
+  );
 }

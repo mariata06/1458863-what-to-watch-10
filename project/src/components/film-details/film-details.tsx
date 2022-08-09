@@ -41,5 +41,5 @@ export function FilmDetails({films}: filmDetailsProps) :JSX.Element {
         </p>
       </div>
     </div>
-  )
+  );
 }

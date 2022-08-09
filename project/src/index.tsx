@@ -4,14 +4,6 @@ import App from './components/app/app';
 import { films, film } from './mocks/films';
 import { reviews } from './mocks/reviews';
 
-const CurrentMovie = {
-  id: 21,
-  title: 'The Grand Budapest Hotel',
-  genre: 'Drama',
-  year: 2014,
-  imgUrl: 'img/bg-the-grand-budapest-hotel.jpg'
-};
-
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement,
 );

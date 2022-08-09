@@ -5,15 +5,6 @@ type FilmReviewsProps = {
   reviews: ReviewProps[]
 }
 
-// const renderElements = ((elements: ReviewProps[]) => {
-//   elements.map((el) => {
-
-//     return (
-//         <Review key={el.id} review={el} />
-//       )
-//   })
-// })
-
 export function FilmReviews(props :FilmReviewsProps) :JSX.Element {
   const arr = props.reviews;
   const count = Number(arr.length / 2);
@@ -55,5 +46,5 @@ export function FilmReviews(props :FilmReviewsProps) :JSX.Element {
         </div>
       </div>
     </>
-);
+  );
 }

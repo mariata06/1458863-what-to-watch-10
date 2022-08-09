@@ -23,6 +23,5 @@ export function FilmOverview({film}: filmOverviewProps) :JSX.Element {
         <p className="film-card__starring"><strong>Starring: { starring }</strong></p>
       </div>
     </>
-
-  )
+  );
 }
