@@ -79,7 +79,7 @@ export default function Film({ films }: Props): JSX.Element {
       <div className="page-content">
         <section className="catalog catalog--like-this">
           <h2 className="catalog__title">More like this</h2>
-          <FilmsList films={films.filter((el) => el.genre === film.genre)} />
+          <FilmsList films={films.filter((el) => el.genre === film.genre).slice(0, 4)} />
         </section>
 
         <PageFooter />

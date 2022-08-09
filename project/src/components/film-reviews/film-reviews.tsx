@@ -22,23 +22,21 @@ export function FilmReviews(props :FilmReviewsProps) :JSX.Element {
   }
 
   return (
-    <>
-      <div className="film-card__reviews film-card__row">
-        <div className="film-card__reviews-col">
-          {
-            firstCommentsArray.map((el) =>
-              <Review key={el.id} review={el} />
-            )
-          }
-        </div>
-        <div className="film-card__reviews-col">
-          {
-            secondCommentsArray.map((el) =>
-              <Review key={el.id} review={el} />
-            )
-          }
-        </div>
+    <div className="film-card__reviews film-card__row">
+      <div className="film-card__reviews-col">
+        {
+          firstCommentsArray.map((el) =>
+            <Review key={el.id} review={el} />
+          )
+        }
       </div>
-    </>
+      <div className="film-card__reviews-col">
+        {
+          secondCommentsArray.map((el) =>
+            <Review key={el.id} review={el} />
+          )
+        }
+      </div>
+    </div>
   );
 }
