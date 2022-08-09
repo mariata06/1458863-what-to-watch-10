@@ -70,30 +70,12 @@ export default function Film({ films }: Props): JSX.Element {
               <img src={film.imgUrl} alt={`${film.title} poster`} width="218" height="327" />
             </div>
 
-            {/* <FIlmTabs /> */}
-            <div className="film-card__desc">
-              <nav className="film-nav film-card__nav">
-                <ul className="film-nav__list">
-                  <li className="film-nav__item film-nav__item--active">
-                    <Link to={`/films/${id}/?tab=overview`} className="film-nav__link">Overview</Link>
-                  </li>
-                  <li className="film-nav__item">
-                    <Link to={`/films/${id}/?tab=details`} className="film-nav__link">Details</Link>
-                  </li>
-                  <li className="film-nav__item">
-                    <Link to={`/films/${id}/?tab=reviews`} className="film-nav__link">Reviews</Link>
-                  </li>
-                </ul>
-              </nav>
-
-              <Outlet />
-
-            </div>
+            <FIlmTabs />
 
           </div>
         </div>
       </section>
-      {/* <div className="page-content">
+      <div className="page-content">
         <section className="catalog catalog--like-this">
           <h2 className="catalog__title">More like this</h2>
           <div className="catalog__films-list">
@@ -134,7 +116,7 @@ export default function Film({ films }: Props): JSX.Element {
 
         <PageFooter />
 
-      </div> */}
+      </div>
     </>
   );
 }

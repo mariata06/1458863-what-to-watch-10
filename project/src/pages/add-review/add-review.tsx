@@ -10,7 +10,7 @@ type AddReviewProps = {
 
 
 export default function AddReview({films} :AddReviewProps): JSX.Element {
-  const {id} = useParams();
+  const { id } = useParams();
   const film = films.find((el) => el.id === Number(id));
 
   if (!film) {

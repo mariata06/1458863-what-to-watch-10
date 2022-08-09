@@ -30,7 +30,7 @@ export default function App({ mainFilm, films, film, reviews }: AppProps): JSX.E
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<Layout />}>
-          <Route path='/' element={<MainScreen films={films} mainFilm={mainFilm} />} />
+          <Route index element={<MainScreen films={films} mainFilm={mainFilm} />} />
           <Route path='login' element={<SignIn />} />
           <Route path='mylist' element={
             <LoginRoute>
@@ -38,11 +38,10 @@ export default function App({ mainFilm, films, film, reviews }: AppProps): JSX.E
             </LoginRoute>
           }
           />
-            <Route path='films/:id/' element={<Film films={films}/>}>
-              {/* <Route index element={<FilmOverview film={film}/>} /> */}
-              <Route path='?tab=overview' element={<FilmOverview film={film}/>} />
-              <Route path='?tab=details' element={<FilmDetails film={film}/>} />
-              <Route path='?tab=reviews' element={<FilmReviews reviews={reviews}/>} />
+            <Route path='films/:id' element={<Film films={films}/>}>
+              <Route index element={<FilmOverview film={film}/>} />
+              <Route path='details' element={<FilmDetails films={films}/>} />
+              <Route path='reviews' element={<FilmReviews reviews={reviews}/>} />
             </Route>
             <Route path=':id/review' element={
               <LoginRoute>

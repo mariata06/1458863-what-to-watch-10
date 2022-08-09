@@ -1,5 +1,6 @@
 // import {Fragment} from 'react';
-import {Outlet} from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
+import PageFooter from './../page-footer/page-footer'
 
 export default function Layout (): JSX.Element {
   return (
