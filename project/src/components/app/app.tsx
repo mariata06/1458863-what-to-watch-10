@@ -13,14 +13,19 @@ import AddReview from '../../pages/add-review/add-review';
 import Player from '../../pages/player/player';
 import Page404 from '../../pages/page404/page404';
 import LoginRoute from '../../components/login-route/login-route';
-import { FilmProps } from '../../types/types';
+import { FilmProps, ReviewProps } from '../../types/types';
+import { FilmDetails } from '../film-details/film-details';
+import { FilmReviews } from '../../components/film-reviews/film-reviews';
+import { FilmOverview } from '../../components/film-overview/film-overview';
 
 type AppProps = {
   mainFilm: FilmProps,
-  films: FilmProps[]
+  film: FilmProps,
+  films: FilmProps[],
+  reviews: ReviewProps[]
 }
 
-export default function App({ mainFilm, films }: AppProps): JSX.Element {
+export default function App({ mainFilm, films, film, reviews }: AppProps): JSX.Element {
   return (
     <BrowserRouter>
       <Routes>
@@ -33,16 +38,17 @@ export default function App({ mainFilm, films }: AppProps): JSX.Element {
             </LoginRoute>
           }
           />
-          <Route path='films/'>
-            <Route index element={<Film films={films}/>} />
-            <Route path=':id/' element={<Film films={films}/>} />
-            <Route path=':id/review' element={
-              <LoginRoute>
-                <AddReview films={films}/>
-              </LoginRoute>
-            }
-            />
+          <Route path='films/:id' element={<Film films={films}/>}>
+            <Route index element={<FilmOverview film={film}/>} />
+            <Route path='details' element={<FilmDetails films={films}/>} />
+            <Route path='reviews' element={<FilmReviews reviews={reviews}/>} />
           </Route>
+          <Route path=':id/review' element={
+            <LoginRoute>
+              <AddReview films={films}/>
+            </LoginRoute>
+          }
+          />
           <Route path='player/:id' element={<Player films={films}/>} />
         </Route>
         <Route path="*" element={<Page404 />} />
